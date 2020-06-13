@@ -40,6 +40,6 @@ type SafeQueue<'a>() =
         loop List.empty)
     
     member __.Enqueue item = agent.Post (Enqueue item)
-    member __.Dequeue() = agent.PostAndReply (fun reply -> Dequeue reply)
-    member __.Size() = agent.PostAndReply (fun reply -> Size reply)
-    member __.Peek() = agent.PostAndReply (fun reply -> Peek reply)    
+    member __.Dequeue() = agent.PostAndReply Dequeue
+    member __.Size() = agent.PostAndReply Size
+    member __.Peek() = agent.PostAndReply Peek

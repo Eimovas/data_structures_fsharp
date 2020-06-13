@@ -45,6 +45,6 @@ type SafeStack<'a>() =
     )
     
     member __.Add item = agent.Post (Add item)
-    member __.Remove() = agent.PostAndReply (fun reply -> Remove reply)
-    member __.Peek() = agent.PostAndReply (fun reply -> Peek reply)
-    member __.Size() = agent.PostAndReply (fun reply -> Size reply)
+    member __.Remove() = agent.PostAndReply Remove
+    member __.Peek() = agent.PostAndReply Peek
+    member __.Size() = agent.PostAndReply Size
