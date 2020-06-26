@@ -1,18 +1,19 @@
-#load "Queue.fs"
+#load "ArrayList.fs"
 
-open Queue
+open ArrayList
 
-let stack = SafeQueue<int>()
-stack.Enqueue 10
-stack.Enqueue 15
-stack.Enqueue 20
+let list = ArrayList<int>()
 
-stack.Peek() |> printfn "%A"
-stack.Size() |> printfn "%i"
+list.Add 1
+list.Add 5
+list.Add 3
+list.Add 3
+list.Add 3
+list.Add 3
+list.Add 3
+list.RemoveAt 1
 
-stack.Dequeue() |> printfn "%A"
-stack.Dequeue() |> printfn "%A"
-stack.Dequeue() |> printfn "%A"
-stack.Dequeue() |> printfn "%A"
+list |> Seq.iter (fun i -> printfn "%i" i)
+list.Size
+list.Capacity
 
-stack.Size() |> printfn "%i"
