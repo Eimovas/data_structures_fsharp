@@ -1,8 +1,8 @@
-#load "ArrayList.fs"
+#load "LinkedList.fs"
 
-open ArrayList
+open LinkedList
 
-let list = ArrayList<int>()
+let list = LinkedList.DoublyLinkedList<int>()
 
 list.Add 1
 list.Add 5
@@ -11,9 +11,7 @@ list.Add 3
 list.Add 3
 list.Add 3
 list.Add 3
-list.RemoveAt 1
 
-list |> Seq.iter (fun i -> printfn "%i" i)
-list.Size
-list.Capacity
+list.List() |> Seq.iter (fun i -> printfn "%A" i)
 
+list.Tail

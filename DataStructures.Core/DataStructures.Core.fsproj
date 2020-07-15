@@ -8,6 +8,7 @@
         <Compile Include="Queue.fs" />
         <Compile Include="Stack.fs" />
         <Compile Include="ArrayList.fs" />
+        <Compile Include="LinkedList.fs" />
         <None Include="scratchpad.fsx" />
     </ItemGroup>
 
